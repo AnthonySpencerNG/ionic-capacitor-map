@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { MapComponent } from '../map/map.component';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +8,13 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
+  @ViewChild(MapComponent, {static: true}) mapComponent: MapComponent;
+
   constructor() {}
+
+  testMarker(): void {
+    let center = this.mapComponent.map.getCenter();
+    this.mapComponent.addMarker(center.lat(), center.lng());
+  }
 
 }

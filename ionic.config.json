@@ -1,5 +1,7 @@
 {
   "name": "ionic-capacitor-map",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
